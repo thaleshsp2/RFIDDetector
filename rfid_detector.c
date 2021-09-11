@@ -56,17 +56,6 @@ void loop()
   Serial.print(":");
   Serial.print(RTC.getSeconds());
   Serial.print("");
-  if (RTC.getHourMode() == CLOCK_H12)
-  {
-    switch (RTC.getMeridiem()) {
-    case HOUR_AM:
-      Serial.print(" AM\n");
-      break;
-    case HOUR_PM:
-      Serial.print(" PM\n");
-      break;
-    }
-  }
 
   //-------------------------------------------
 
