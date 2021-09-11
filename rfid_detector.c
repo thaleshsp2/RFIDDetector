@@ -13,6 +13,8 @@ void setup()
 {
   Serial.begin(9600);
   SPI.begin();
+  RTC.setHourMode(CLOCK_H24);
+  RTC.setDateTime(__DATE__, __TIME__);
   RTC.begin();
   mfrc522.PCD_Init();
 }
