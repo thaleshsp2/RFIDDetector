@@ -68,7 +68,13 @@ void loop()
 
   //-------------------------------------------
 
-  mfrc522.PICC_DumpDetailsToSerial(&(mfrc522.uid)); //dump some details about the card
+  char str[32] = "";
+
+  //mfrc522.PICC_DumpDetailsToSerial(&(mfrc522.uid)); //dump some details about the card
+  array_to_string(mfrc522.uid.uidByte, 4, str); //Insert (byte array, length, char array for output)
+  Serial.print(F("\nCodigo do animal: "));
+  Serial.println(str);
+
 
   Serial.print(F("\nStatus: "));
 
